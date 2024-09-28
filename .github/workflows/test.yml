@@ -45,7 +45,6 @@ jobs:
             sed -e "s/{{title}}/$title/g" \
                 -e "s/{{meta-description}}/$meta_description/g" \
                 -e "s/{{account}}/$account/g" \
-                -e "s/{{domainUrl}}/$domainUrl/g" \
                 -e "s/{{filename}}/$filename/g" \
                 -e "s/{{meta-source}}/$meta_source/g" \
                 -e "s|{{image-logo}}|$image_logo|g" \
