@@ -37,6 +37,7 @@ jobs:
               meta_description=$(echo "$item" | jq -r '.["meta-description"]') # Use brackets for keys with hyphens
               meta_source=$(echo "$item" | jq -r '.["meta-source"]')
               image_logo=$(echo "$item" | jq -r '.["image-logo"]') # Use brackets for keys with hyphens
+              image_banner=$(echo "$item" | jq -r '.["image-banner"]') # Use brackets for keys with hyphens
               livechat_url=$(echo "$item" | jq -r '.["livechat-url"]') # Use brackets for keys with hyphens
 
             # Use the template to create the HTML file
@@ -47,6 +48,7 @@ jobs:
                 -e "s/{{filename}}/$filename/g" \
                 -e "s/{{meta-source}}/$meta_source/g" \
                 -e "s|{{image-logo}}|$image_logo|g" \
+                -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{livechat-url}}|$livechat_url|g" \
                 template.html > "$filename"
           done
