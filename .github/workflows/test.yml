@@ -29,7 +29,7 @@ jobs:
           json_data=$(cat news.json)
           account=$(echo "$json_data" | jq -r '.[0].account')
           repository=$(echo "$json_data" | jq -r '.[0].repository')
-          domainUrl=$(echo "$json_data" | jq -r '.[0].domain-url')
+          domainUrl=$(echo "$json_data" | jq -r '.[0]["domain-url"]')
 
           # Loop through each item in the dynamic array and create an HTML file
           echo "$json_data" | jq -c '.[0].dynamic[]' | while read -r item; do
