@@ -33,6 +33,10 @@ jobs:
           liveChatUrl=$(echo "$json_data" | jq -r '.[0]["livechat-url"]')
           imageLogo=$(echo "$json_data" | jq -r '.[0]["image-logo"]')
 
+          escape_sed() {
+              echo "$1" | sed -e 's/[\/&]/\\&/g'
+          }
+
           # Loop through each item in the dynamic array and create an HTML file
           echo "$json_data" | jq -c '.[0].dynamic[]' | while read -r item; do
               filename=$(echo "$item" | jq -r '.filename')
@@ -42,6 +46,9 @@ jobs:
               image_banner=$(echo "$item" | jq -r '.["image-banner"]') # Use brackets for keys with hyphens
               content=$(echo "$item" | jq -r '.content')
 
+            # Escape the content for sed
+            escaped_content=$(escape_sed "$content")
+            
             # Use the template to create the HTML file
             sed -e "s/{{title}}/$title/g" \
                 -e "s/{{meta-description}}/$meta_description/g" \
@@ -53,7 +60,7 @@ jobs:
                 -e "s|{{imageLogo}}|$imageLogo|g" \
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
-                -e "s|{{content}}/$content/g" \
+                -e "s|{{content}}|$escaped_content|g" \
                 template.html > "$filename"
           done
 
