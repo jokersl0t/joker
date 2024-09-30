@@ -40,6 +40,7 @@ jobs:
               meta_description=$(echo "$item" | jq -r '.["meta-description"]') # Use brackets for keys with hyphens
               meta_source=$(echo "$item" | jq -r '.["meta-source"]')
               image_banner=$(echo "$item" | jq -r '.["image-banner"]') # Use brackets for keys with hyphens
+              content=$(echo "$item" | jq -r '.content')
 
             # Use the template to create the HTML file
             sed -e "s/{{title}}/$title/g" \
@@ -52,6 +53,7 @@ jobs:
                 -e "s|{{imageLogo}}|$imageLogo|g" \
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
+                -e "s/{{content}}/$content/g" \
                 template.html > "$filename"
           done
 
