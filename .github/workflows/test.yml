@@ -29,7 +29,6 @@ jobs:
           json_data=$(cat news.json)
           account=$(echo "$json_data" | jq -r '.[0].account')
           repository=$(echo "$json_data" | jq -r '.[0].repository')
-          # domainUrl=$(echo "$json_data" | jq -r '.[0].domainUrl')
 
           # Loop through each item in the dynamic array and create an HTML file
           echo "$json_data" | jq -c '.[0].dynamic[]' | while read -r item; do
@@ -45,6 +44,7 @@ jobs:
             sed -e "s/{{title}}/$title/g" \
                 -e "s/{{meta-description}}/$meta_description/g" \
                 -e "s/{{account}}/$account/g" \
+                -e "s/{{repository}}/$repository/g" \
                 -e "s/{{filename}}/$filename/g" \
                 -e "s/{{meta-source}}/$meta_source/g" \
                 -e "s|{{image-logo}}|$image_logo|g" \
