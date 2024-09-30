@@ -53,7 +53,7 @@ jobs:
                 -e "s|{{imageLogo}}|$imageLogo|g" \
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
-                -e "s/{{content}}/$content/g" \
+                -e "s|{{content}}/$content/g" \
                 template.html > "$filename"
           done
 
