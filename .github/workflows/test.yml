@@ -32,6 +32,7 @@ jobs:
           domainUrl=$(echo "$json_data" | jq -r '.[0]["domain-url"]')
           liveChatUrl=$(echo "$json_data" | jq -r '.[0]["livechat-url"]')
           imageLogo=$(echo "$json_data" | jq -r '.[0]["image-logo"]')
+          metaSource=$(echo "$json_data" | jq -r '.[0]["meta-source"]')
 
           escape_sed() {
               echo "$1" | sed -e 's/[\/&]/\\&/g'
@@ -42,7 +43,6 @@ jobs:
               filename=$(echo "$item" | jq -r '.filename')
               title=$(echo "$item" | jq -r '.title')
               meta_description=$(echo "$item" | jq -r '.["meta-description"]') # Use brackets for keys with hyphens
-              meta_source=$(echo "$item" | jq -r '.["meta-source"]')
               image_banner=$(echo "$item" | jq -r '.["image-banner"]') # Use brackets for keys with hyphens
               content=$(echo "$item" | jq -r '.content')
 
@@ -56,7 +56,7 @@ jobs:
                 -e "s/{{repository}}/$repository/g" \
                 -e "s|{{domainUrl}}|$domainUrl|g" \
                 -e "s/{{filename}}/$filename/g" \
-                -e "s/{{meta-source}}/$meta_source/g" \
+                -e "s|{{metaSource}}|$metaSource|g" \
                 -e "s|{{imageLogo}}|$imageLogo|g" \
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
