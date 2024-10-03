@@ -36,7 +36,7 @@ jobs:
           templateType=$(echo "$json_data" | jq -r '.[0].template')
           whitelabel=$(echo "$json_data" | jq -r '.[0].whitelabel')
           referral=$(echo "$json_data" | jq -r '.[0].referral')
-          imageGif=$(echo "$json_data" | jq -r '.[0]["image-gif"]')
+          imageGif=$(echo "$json_data" | jq -r '.[0].image-gif')
 
           escape_sed() {
               echo "$1" | sed -e 's/[\/&]/\\&/g'
