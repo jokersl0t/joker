@@ -1,61 +1,41 @@
 <!doctype html>
-<html lang="id" amp i-amphtml-binding i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1"
-    itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<html amp lang="id" itemscope="itemscope" itemtype="https://schema.org/WebPage">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{title}} 2</title>
-    <meta name="description"
-        content="{{meta-description}}" />
-    <link itemprop="mainEntityOfPage" rel="canonical"
-        href="https://{{account}}.github.io/{{repository}}/{{filename}}" />
+    <link itemprop="mainEntityOfPage" rel="canonical" href="https://{{account}}.github.io/{{repository}}/{{filename}}">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{meta-description}}" />
+    <meta name="keywords" content="{{metaSource}}">
+    <meta name="categories" content="website">
+    <meta name="language" content="id-ID">
+    <meta name="tgn.nation" content="Indonesia" />
+    <meta name="geo.placename" content="Indonesia" />
+    <meta name="geo.region" content="ID">
+    <meta name="geo.country" content="ID" />
     <meta name="robots" content="index, follow" />
-    <meta name="page-locale" content="id,en">
-    <meta content="true" name="HandheldFriendly">
-    <meta content="width" name="MobileOptimized">
-    <meta content="indonesian" name="language">
-    <meta content='#007fa0' name='theme-color' />
-    <meta name="supported-amp-formats" content="websites,stories,ads,email">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{title}}">
-    <meta name="twitter:description"
-        content="{{meta-description}}">
-    <meta name="twitter:image:src"
-        content="{{image-banner}}">
-    <meta name="og:title" content="{{title}}">
-    <meta name="og:description" content="">
-    <meta name="og:image"
-        content="{{image-banner}}">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720">
-    <meta property="og:url"
-        content="https://{{account}}.github.io/{{repository}}/{{filename}}">
-    <meta property="og:site_name" content="{{metaSource}}">
-    <meta property="og:locale" content="id-ID">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="categories" content="website" />
-    <meta name="language" content="ID">
-    <meta name="rating" content="general">
-    <meta name="copyright" content="{{metaSource}}">
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="Indonesia">
     <meta name="author" content="{{metaSource}}">
-    <meta name="distribution" content="global">
     <meta name="publisher" content="{{metaSource}}">
-    <meta property="article:modified_time" content="2024-09-23T22:08:27+00:00" />
-    <meta name="geo.placename" content="Indonesia">
-    <meta name="geo.country" content="ID">
-    <meta name="geo.region" content="ID" />
-    <meta name="tgn.nation" content="Indonesia">
-    <link rel="icon" type="image/x-icon" href="https://imagizer.imageshack.com/img922/2741/IqVwiz.png" />
-    <link rel="apple-touch-icon" href="https://imagizer.imageshack.com/img922/2741/IqVwiz.png">
-
-
-
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-
-    <style amp-runtime i-amphtml-version="012107240354000">
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{account}}.github.io/{{repository}}/{{filename}}" />
+    <meta property="og:site_name" content="{{metaSource}}" />
+    <meta property="og:image" content="{{image-banner}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{meta-description}}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="https://{{account}}.github.io/{{repository}}/{{filename}}">
+    <meta name="twitter:site" content="@{{whitelabel}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{meta-description}}">
+    <meta name="twitter:image" content="{{image-banner}}">
+    <link rel="apple-touch-icon" href="{{{{imageLogo}}}}" />
+    <link rel="shortcut icon" type="image/x-icon" sizes="32x32"
+        href="{{{{imageLogo}}}}">
+    <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -112,8 +92,7 @@
                 visibility: visible
             }
         }
-    </style>
-    <noscript>
+    </style><noscript>
         <style amp-boilerplate>
             body {
                 -webkit-animation: none;
@@ -132,38 +111,15 @@
         }
 
         body {
-            font-size: var(--normal-font);
+            font-size: var(--small-font);
             display: flex;
             flex-direction: column;
             padding-top: 54px;
-            padding-bottom: 52px;
-            user-select: none;
-            line-height: 1.5rem;
-        }
-
-        h1,
-        h2,
-        h3 {
-
-            color: #ffd125;
-            line-height: 30px;
-
-        }
-
-        h2,
-        h3,
-        h4 {
-            text-align: left;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 25px;
+            padding-bottom: 52px
         }
 
         a {
-            text-decoration: none;
-            color: #ffd125;
+            text-decoration: none
         }
 
         summary {
@@ -172,8 +128,8 @@
 
         .container {
             align-self: center;
-            margin-left: 5px auto;
-            padding: 5px 10px;
+            margin-left: auto;
+            margin-right: auto
         }
 
         .logo-container {
@@ -190,7 +146,7 @@
         }
 
         .logo-container .logo {
-            width: calc(30px*120/30);
+            width: calc(38px * 180 / 45);
             display: block
         }
 
@@ -198,162 +154,114 @@
             flex-grow: 1
         }
 
+        .site-menu {
+            width: 60%;
+            background-color: #01091a
+        }
+
+        .site-menu amp-img {
+            margin-right: 10px
+        }
+
+        .site-menu amp-img.chevron-right {
+            position: absolute;
+            right: 0;
+            filter: invert(1);
+            transition: transform 0.3s;
+            transform-origin: center
+        }
+
+        .site-menu details[open]>summary>section>amp-img.chevron-right {
+            transform: rotate(90deg)
+        }
+
+        .site-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: var(--large-font)
+        }
+
+        .site-menu li li,
+        .site-menu summary,
+        .site-menu article>ul {
+            margin-top: 2px
+        }
+
+        .site-menu li>a,
+        .site-menu summary {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #0d1b39;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        .site-menu details details summary,
+        .site-menu details li>a {
+            padding-left: 45px;
+            background-color: #06122c;
+            cursor: pointer
+        }
+
+        .site-menu details details li>a {
+            padding-left: 75px;
+            background-color: #040d20;
+            cursor: pointer
+        }
+
+        .site-menu-trigger [data-icon="menu"] {
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 58%;
+            bottom: auto;
+            right: auto;
+            transform: translateX(-50%) translateY(-50%);
+            width: 18px;
+            height: 2px;
+            background-color: #8e8e8e;
+            transition: 0.5s ease-in-out
+        }
+
+        .site-menu-trigger [data-icon="menu"]:before,
+        .site-menu-trigger [data-icon="menu"]:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: inherit;
+            left: 0
+        }
+
+        .site-menu-trigger [data-icon="menu"]:before {
+            bottom: 5px
+        }
+
+        .site-menu-trigger [data-icon="menu"]:after {
+            top: 5px
+        }
+
         .link-container {
             display: flex;
             justify-content: center;
             font-size: var(--x-large-font);
             padding: 0;
-            margin-top: 10px;
             width: 100%
         }
 
-        .link-container.container {
-            max-width: 920px;
-        }
-
         .link-container a {
-            color: #f9ff1a;
             width: 50%;
-            font-weight: bold;
-            text-align: center;
+            text-align: left;
             padding: 15px 20px;
             text-transform: uppercase
         }
 
-        .animated-button1 {
-            background: linear-gradient(86deg, yellow, #ffa321, #cb3971, #ff5638, #ffbe46, #ffb766);
-            padding: 16px 40px;
-            margin: 10px 12px;
-            display: inline-block;
-            -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-            overflow: hidden;
-            color: #000;
-            font-size: 20px;
-            letter-spacing: 2.5px;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            -webkit-box-shadow: inset 0 2px 0 rgba(255, 255, 255, .5), 0 2px 2px rgba(0, 0, 0, .3), 0 2px 4px 1px rgba(0, 0, 0, .2);
-            box-shadow: inset 0 2px 0 rgba(255, 255, 255, .5), 0 2px 2px rgba(0, 0, 0, .3), 0 2px 4px 1px rgba(0, 0, 0, .2);
-            border-radius: 8px;
-            font-family: Convergence, sans-serif;
-            font-weight: bolder;
-        }
-
-        .animated-button1::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ad8585;
-            opacity: 0;
-            -webkit-transition: .2s opacity ease-in-out;
-            transition: .2s opacity ease-in-out
-        }
-
-        .animated-button1:hover::before {
-            opacity: .2
-        }
-
-        .animated-button1 span {
-            position: absolute
-        }
-
-        .animated-button1 span:nth-child(1) {
-            top: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#0f0));
-            background: linear-gradient(to left, rgba(43, 8, 8, 0), #fdf8dc);
-            -webkit-animation: 2s animateTop linear infinite;
-            animation: 2s animateTop linear infinite
-        }
-
-        @keyframes animateTop {
-            0% {
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%)
-            }
-
-            100% {
-                -webkit-transform: translateX(-100%);
-                transform: translateX(-100%)
-            }
-        }
-
-        .animated-button1 span:nth-child(2) {
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 3px;
-            background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#0f0));
-            background: linear-gradient(to top, rgba(43, 8, 8, 0), gold);
-            -webkit-animation: 2s animateRight linear -1s infinite;
-            animation: 2s animateRight linear -1s infinite
-        }
-
-        @keyframes animateRight {
-            0% {
-                -webkit-transform: translateY(100%);
-                transform: translateY(100%)
-            }
-
-            100% {
-                -webkit-transform: translateY(-100%);
-                transform: translateY(-100%)
-            }
-        }
-
-        .animated-button1 span:nth-child(3) {
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#0f0));
-            background: linear-gradient(to right, rgba(43, 8, 8, 0), gold);
-            -webkit-animation: 2s animateBottom linear infinite;
-            animation: 2s animateBottom linear infinite
-        }
-
-        @keyframes animateBottom {
-            0% {
-                -webkit-transform: translateX(-100%);
-                transform: translateX(-100%)
-            }
-
-            100% {
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%)
-            }
-        }
-
-        .animated-button1 span:nth-child(4) {
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 3px;
-            background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#0f0));
-            background: linear-gradient(to bottom, rgba(43, 8, 8, 0), gold);
-            -webkit-animation: 2s animateLeft linear -1s infinite;
-            animation: 2s animateLeft linear -1s infinite
-        }
-
-        @keyframes animateLeft {
-            0% {
-                -webkit-transform: translateY(-100%);
-                transform: translateY(-100%)
-            }
-
-            100% {
-                -webkit-transform: translateY(100%);
-                transform: translateY(100%)
-            }
-
+        .login-button,
+        .register-button {
+            color: #fff
         }
 
         .main-menu-container {
@@ -378,8 +286,7 @@
             flex-direction: column;
             color: #fff;
             font-size: var(--normal-font);
-            text-transform: inherit;
-            font-family: system-ui
+            text-transform: uppercase
         }
 
         .main-menu-container li amp-img {
@@ -400,11 +307,8 @@
             color: #03ffd8
         }
 
-        .footer-container {
-            text-align: center;
-            max-width: 900px;
-            margin-top: -15px;
-
+        .copyleft {
+            text-align: center
         }
 
         .footer-container .bank-list,
@@ -426,8 +330,8 @@
             margin: 5px 10px;
             display: flex;
             align-items: center;
-            background-color: #040a2a;
-            border-radius: 30px;
+            background: linear-gradient(to bottom, #265e7e 0%, #01c2c8 100%);
+            border-radius: 5px;
             color: #fff;
             font-size: var(--normal-font)
         }
@@ -440,14 +344,14 @@
             -ms-flex-align: center;
             width: 36px;
             height: 36px;
-            margin-right: 10px;
-            border-radius: 50%;
+            margin-right: 20px;
+            border-radius: 15%;
             background: #51c332
         }
 
         .footer-container .contact-list>li a i amp-img {
             margin: 5px;
-            flex-basis: 0;
+            flex-basis: 0%;
             -ms-flex-preferred-size: 0;
             -webkit-box-flex: 1;
             -ms-flex-positive: 1;
@@ -483,11 +387,11 @@
         }
 
         .footer-container .bank-list span[data-online="true"] {
-            background-color: #0f0
+            background-color: #f3cf02
         }
 
         .footer-container .bank-list span[data-online="false"] {
-            background-color: #e00
+            background-color: rgb(238, 163, 0)
         }
 
         .footer-container .footer-links {
@@ -501,7 +405,7 @@
             margin-bottom: 5px
         }
 
-        .footer-container .footer-links>li:not(:nth-child(5n+5)):not(:first-child) {
+        .footer-container .footer-links>li:not(nth-child(5n 5)):not(first-child) {
             border-left: 1px solid #fff
         }
 
@@ -512,7 +416,16 @@
         }
 
         .site-description {
-            padding: 10px
+            background-color: transparent;
+            padding: 10px;
+            color: #fff
+        }
+
+        .footer-container h1,
+        .footer-container h2,
+        .footer-container h3,
+        .footer-container h4 {
+            display: block
         }
 
         .copyright {
@@ -526,11 +439,585 @@
             padding-bottom: 10px
         }
 
+        @media (min-width:768px) {
+            body {
+                font-size: var(--normal-font)
+            }
+
+            .container {
+                width: 970px
+            }
+
+            .site-menu {
+                width: 20%
+            }
+        }
+
+        @media (min-width:1200px) {
+            .container {
+                width: 1170px
+            }
+        }
+
+        @media (min-width:992px) {
+            .container {
+                width: 970px
+            }
+        }
+
+        @font-face {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            src: url(/fonts/Lato-Regular.woff2) format("woff2"), url(/fonts/Lato-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @keyframes pulse {
+            0% {
+                filter: initial
+            }
+
+            50% {
+                filter: brightness(40.5) drop-shadow(0 0 10px white)
+            }
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0a0814
+        }
+
+        .logo-container {
+            justify-content: space-between;
+            padding: 0;
+            background: linear-gradient(to bottom, #050d2d 0%, #050d2d 100%)
+        }
+
+        .logo-container .logo {
+            padding: 10px
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: space-between;
+            min-width: 100px;
+            align-self: stretch
+        }
+
+        .header-right .register-section {
+            align-self: stretch;
+            align-items: center;
+            display: flex;
+            border-right-width: 0;
+            border-right-style: groove;
+            border-right-color: #4d5054;
+            padding: 10px 15px
+        }
+
+        .header-right .register-section a {
+            padding: 7px 15px
+        }
+
+        .header-right .hamburger-section {
+            align-self: center;
+            padding: 10px 0 10px 10px;
+            margin: 10px 0 10px 10px
+        }
+
+        .site-menu-hamburger {
+            position: initial;
+            right: initial
+        }
+
+        .site-menu-trigger [data-icon="menu"] {
+            position: initial;
+            left: initial;
+            right: initial;
+            top: initial;
+            bottom: initial;
+            background-color: #f41168
+        }
+
+        .site-menu-trigger [data-icon="menu"]:before,
+        .site-menu-trigger [data-icon="menu"]:after {
+            right: 0;
+            left: initial
+        }
+
+        .site-menu-trigger [data-icon="menu"]:before {
+            width: 14px
+        }
+
+        .site-menu-trigger [data-icon="menu"]:after {
+            width: 22px
+        }
+
+        .site-menu {
+            background-color: #09020e
+        }
+
+        .site-menu li li,
+        .site-menu summary,
+        .site-menu article>ul {
+            margin-top: 0
+        }
+
+        .site-menu li li,
+        .site-menu details article {
+            border-top: 2px solid #190620
+        }
+
+        .site-menu li>a,
+        .site-menu summary,
+        .site-menu details details summary,
+        .site-menu details li>a,
+        .site-menu details details li>a {
+            border-left: 3px solid #856f94;
+            color: #766284;
+            background-color: #09020e
+        }
+
+        .site-menu>ul>li:first-child>a,
+        .site-menu details[open]>summary,
+        .site-menu details[open]>summary details[open]>summary {
+            border-left-color: #f60086;
+            color: #fff
+        }
+
+        .register-button,
+        .login-button {
+            border-radius: 5px
+        }
+
+        .link-container {
+            padding: 20px 0;
+            font-size: var(--normal-font);
+            background-color: #084654;
+            background-image: linear-gradient(to right, #ffd000 0%, #663e02 100%)
+        }
+
+        .link-container a {
+            margin-top: 10px;
+            width: auto;
+            padding: 5px 15px;
+            margin-left: 10px;
+            align-self: center
+        }
+
+        amp-carousel {
+            margin-top: 10px
+        }
+
+        amp-carousel.main-menu-container .amp-carousel-button:not(.amp-disabled) {
+            animation: none;
+            visibility: visible
+        }
+
+        amp-carousel.main-menu-container div.amp-carousel-button-next,
+        amp-carousel.main-menu-container div.amp-carousel-button-prev {
+            opacity: 1;
+            pointer-events: initial
+        }
+
+        .amp-carousel-button-prev {
+            left: 0
+        }
+
+        .amp-carousel-button-next {
+            right: 0
+        }
+
+        .main-menu-container {
+            padding: 0 0 10px 0;
+            justify-content: center;
+            background-color: #0a0814
+        }
+
+        .main-menu-container .amp-carousel-button-next,
+        .main-menu-container .amp-carousel-button-prev {
+            width: 20px;
+            height: 100%;
+            background-color: #fe0178;
+            color: #fff
+        }
+
+        .main-menu-container li a {
+            font-size: var(--small-font);
+            color: #736d99;
+            padding: 10px
+        }
+
+        .jackpot-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d0b18;
+            color: #fff;
+            text-shadow: 0 2px 22px #ed00ff;
+            font-size: var(--x-large-font);
+            text-transform: uppercase;
+            padding: 10px 0
+        }
+
+        .popular-game-title-container {
+            background-color: #f1e206;
+            background-image: linear-gradient(to right, #f1e206 0%, #835900 100%);
+            color: #fff
+        }
+
+        .popular-game-title-container .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px
+        }
+
+        .popular-game-title-container .title .popular-games-icon {
+            margin-right: 10px
+        }
+
+        .popular-game-title-container .title {
+            font-size: var(--large-font);
+            display: flex;
+            align-items: center
+        }
+
+        .popular-game-title-container a {
+            padding: 6px 8px;
+            border-radius: 25px;
+            font-size: 10px;
+            background-color: rgba(252, 247, 0, .64);
+            color: #fff
+        }
+
+        .bigger-game-list ul {
+            padding: 5px 0;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style-type: none
+        }
+
+        .bigger-game-list ul>li {
+            max-width: calc(100% / 3 - 10px);
+            min-width: calc(100% / 4 - 10px);
+            flex-basis: 133px;
+            padding: 5px;
+            text-align: center;
+            color: #fff;
+            font-size: 80%
+        }
+
+        .bigger-game-list ul .inner-game-item {
+            margin: 0;
+            padding: 5px;
+            border-radius: 25px;
+            background-color: #1e1a31;
+            background-image: linear-gradient(to bottom, #1e1a31 0%, #171429 100%);
+            display: block;
+            font-weight: 400
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container {
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+            margin-bottom: 5px;
+            border-radius: 25px;
+            overflow: hidden
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container>amp-img,
+        .bigger-game-list ul .inner-game-item .wrapper-container .game-link-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container>amp-img {
+            background-color: #000;
+            transition: transform 0.2s;
+            transform-origin: center
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container .game-link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-color: rgba(243, 207, 3, .85)
+        }
+
+        .bigger-game-listul.inner-game-item.wrapper-container.game-link-container>a {
+            margin: 0
+        }
+
+        .bigger-game-list ul .inner-game-item .game-name {
+            display: block;
+            margin: 8px 0 4px;
+            padding: 0 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
+        .bigger-game-list ul input[type="radio"] {
+            position: absolute;
+            visibility: hidden;
+            left: -99em
+        }
+
+        .bigger-game-listulinput[type="radio"]:not(:checked)~.wrapper-container.game-link-container {
+            display: none
+        }
+
+        .bigger-game-listulinput[type="radio"]:checked~.wrapper-container>amp-img {
+            transform: scale(1.25)
+        }
+
+        .play-now {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 18px;
+            padding: 5px;
+            background-color: #f8007e;
+            background-image: linear-gradient(to right, #f8007e 0%, #a500e0 100%);
+            color: #fff;
+            width: 80%
+        }
+
+        .post-content-container {
+            margin-top: 10px;
+            background: #332a63;
+            background-image: linear-gradient(to bottom, #332a63 0%, #221c40 100%)
+        }
+
+        .footer-container .contact-list {
+            justify-content: center
+        }
+
+        .footer-container .contact-list li a {
+            background: linear-gradient(to bottom, #265e7e 0%, #01c2c8 100%);
+            padding: 3px 15px 3px 3px;
+            font-size: var(--small-font)
+        }
+
+        .footer-container .contact-list>li a i {
+            width: 35px;
+            height: 35px;
+            background-color: #021f2d
+        }
+
+        .footer-container .social-media-list li {
+            flex-basis: auto;
+            margin: 10px
+        }
+
+        .footer-container .footer-links {
+            background-color: #141125;
+            align-items: center
+        }
+
+        .footer-container .footer-links li {
+            flex-basis: auto;
+            padding: 2.5px 10px
+        }
+
+        .footer-container .footer-links li a {
+            color: #f5c904
+        }
+
+        .footer-container .footer-links>li:not(nth-child(5n 5)):not(first-child) {
+            border: none
+        }
+
+        body {
+            background: linear-gradient(to bottom, #050e2f 0%, #02061c 40%)
+        }
+
+        .header-right .register-section {
+            border-right-color: #4d5054
+        }
+
+        .site-menu-trigger [data-icon="menu"] {
+            background-color: #f7f7f7
+        }
+
+        .site-menu {
+            background-color: #0a0a0a
+        }
+
+        .site-menu li li,
+        .site-menu details article {
+            border-color: #0e0e0e
+        }
+
+        .site-menu li>a,
+        .site-menu summary,
+        .site-menu details details summary,
+        .site-menu details li>a,
+        .site-menu details details li>a {
+            border-color: #4a4a4a;
+            color: #fff;
+            background-color: #161616
+        }
+
+        .site-menu>ul>li:first-child>a,
+        .site-menu details[open]>summary,
+        .site-menu details[open]>summary details[open]>summary {
+            border-left-color: #ffeb00;
+            color: #fff
+        }
+
+        .link-container {
+            background-color: #141414;
+            background-image: linear-gradient(to right, #141414 0%, #000 100%)
+        }
+
+        .main-menu-container {
+            background-color: inherit
+        }
+
+        .main-menu-container .amp-carousel-button-next,
+        .main-menu-container .amp-carousel-button-prev {
+            background-color: #949100;
+            color: #484848
+        }
+
+        .main-menu-container li a {
+            color: #e7d001
+        }
+
+        .jackpot-container {
+            background-color: rgba(21, 21, 21, .83);
+            color: #fff;
+            text-shadow: 0 2px 22px #13f703
+        }
+
+        .popular-game-title-container {
+            background-color: #50c22e;
+            background: linear-gradient(to right, #50c22e 0%, #2a7118 100%);
+            color: #fff
+        }
+
+        .popular-game-title-container a {
+            background-color: #0eff00;
+            color: #000
+        }
+
+        .bigger-game-list ul>li {
+            color: #fff
+        }
+
+        .bigger-game-list ul .inner-game-item {
+            background-color: #1fa007;
+            background-image: linear-gradient(to bottom, #1fa007 0%, #184e05 100%)
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container>amp-img {
+            background-color: #000
+        }
+
+        .bigger-game-list ul .inner-game-item .wrapper-container .game-link-container {
+            background-color: rgba(253, 194, 0, .85)
+        }
+
+        .play-now {
+            background: #26700c;
+            background-image: linear-gradient(to right, #26700c 0%, #16e601 100%);
+            color: #fff
+        }
+
+        .register-button {
+            background: linear-gradient(to bottom, #265e7e 0%, #01c2c8 100%)
+        }
+
+        .login-button {
+            background: transparent;
+            border: 1px solid #01c2c8
+        }
+
+        .footer-container {
+            color: #fff
+        }
+
+        .footer-container .post-content-container {
+            background: transparent
+        }
+
+        .footer-container .contact-list li a {
+            background: linear-gradient(to bottom, #265e7e 0%, #01c2c8 100%);
+            color: #fff;
+            font-weight: 700
+        }
+
+        .footer-container .footer-links {
+            background-color: inherit
+        }
+
+        .footer-container .footer-links li a {
+            color: #fff
+        }
+
+        .fixed-footer {
+            background: #050d2d;
+            background-image: -moz-linear-gradient(top, #050d2d 0%, #021f2d 100%);
+            background-image: -webkit-linear-gradient(top, #050d2d 0%, #021f2d 100%)
+        }
+
+        table.tbuah {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            font-size: calc(8px 1vh);
+            margin: 0 20px 0 0
+        }
+
+        table.tbuah td,
+        table.tbuah th {
+            border: 1px solid #0b9ab1;
+            padding: 10px 5px 10px
+        }
+
+        table.tbuah tbody td {
+            font-size: calc(8px 1vh);
+            font-weight: 500;
+            color: #fff
+        }
+
+        table.tbuah thead {
+            background: #ffd410
+        }
+
+        table.tbuah thead th {
+            font-size: calc(12px 1vh);
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(to bottom, #082c3e 0%, #01c2c8 100%)
+        }
+
+        .fixed-footer .center {
+            transform: scale(1.5) translateY(-5px);
+            background: center no-repeat;
+            background-size: contain;
+            background-color: inherit;
+            border-radius: 50%
+        }
+
         .fixed-footer {
             display: flex;
             justify-content: space-around;
             position: fixed;
-            background-color: #0a1749;
             padding: 5px 0;
             left: 0;
             right: 0;
@@ -539,237 +1026,18 @@
         }
 
         .fixed-footer a {
-            flex-basis: calc((100% - 15px*6)/5);
+            flex-basis: calc((100% - 15px * 6) / 5);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #999
-        }
-
-        .fixed-footer a.active {
-            color: #ffd125
-        }
-
-        .table {
-            width: 100%;
-            margin: auto;
-            border-collapse: collapse;
-            border-color: #000;
             color: #fff;
-            text-align: left;
-            font-size: 14px
-        }
-
-        .table tr {
-            background-color: #262626
-        }
-
-        .table tr td,
-        .table tr th {
-            padding: 15px;
-            border: 1px solid #000
-        }
-
-        .table tr td b {
-            font-weight: 500
-        }
-
-        .table {
-            width: 100%;
-            overflow: auto
-        }
-
-        .table tr>td,
-        .table tr>th {
-            text-align: center;
-            font-size: 15px
-        }
-
-        .table tr>th {
-            background: linear-gradient(#000000 20%, #708090 90%, #000000 20%)
-        }
-
-        .table tr>td {
-            background: #1a1313
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse
-        }
-
-        .table-bordered tr>td {
-            padding: 10px;
-            border-bottom: 2px solid #708090
-        }
-
-        .btn-daftar {
-            padding: 5px 20px;
-            text-align: center;
-            color: #fff;
-            font-weight: 500;
-            font-size: 16px;
-            text-transform: uppercase;
-            background: #000c99;
-            background: #000;
-            animation: blinking 0.5s infinite;
-            transition: all .4s;
-        }
-
-        .btn-daftar:hover {
-            background: #000;
-            transition: all .5s
-        }
-
-        @keyframes blinking {
-            0% {
-                border: 5px solid #fff
-            }
-
-            100% {
-                border: 5px solid #0f0
-            }
-        }
-
-        table.LinkgameGacor td,
-        table.LinkgameGacor th {
-            border: 1px solid #ffffff;
-            font-size: var(--normal-font);
-            font-family: system-ui
-        }
-
-        table.LinkgameGacor tbody td {
-            color: #ffffff;
-            text-align: left;
-            padding: 4px;
-            font-size: var(--normal-font);
-            font-family: system-ui
-        }
-
-        table.LinkgameGacor thead {
-            font-size: var(--normal-font);
-            font-family: system-ui
-        }
-
-        table.LinkgameGacor thead th {
-            color: #ffd125;
-            text-align: center;
-            font-size: var(--normal-font);
-            font-family: system-ui
-        }
-
-        @media (min-width:768px) {
-            body {
-                font-size: var(--normal-font)
-            }
-
-            .container {
-                width: 98%;
-            }
-
-            .site-menu {
-                width: 20%
-            }
-
-        }
-
-        @media (min-width:1200px) {
-            .container {
-                width: 98%;
-            }
-        }
-
-        @media (min-width:992px) {
-            .container {
-                width: 98%;
-            }
-        }
-
-        body {
-            font-family: 'digital_sans_ef_medium';
-            background-color: black
-        }
-
-        .jackpot-prize {
-            position: absolute;
-            font-size: 20px;
-            bottom: 20%
-        }
-
-        .modal-dialog {
-            background: rgba(0, 0, 0, .5);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .modal-content {
-            background: #0c0c0c;
-            border-color: #0c0c0c;
-            color: #bbb;
-            flex-basis: 95%;
-            pointer-events: initial;
-            border: 0;
-            border-radius: 10px;
-            border: 5px solid #000
-        }
-
-        .modal-header {
-            background: #0c0c0c;
-            border-bottom-color: #333;
-            text-align: center;
-            border-top-left-radius: inherit;
-            border-top-right-radius: inherit;
-            border-bottom: 0;
-            min-height: 50px;
-            text-transform: uppercase;
-            display: contents
-        }
-
-        .modal-content h4 {
-            color: #1b4bff
-        }
-
-        .modal-header .close {
-            opacity: 1;
-            margin: 0;
-            color: #fff;
-            float: right;
-            font-size: 21px;
-            font-weight: bold;
-            line-height: 1;
-            text-shadow: 0 1px 0 #fff;
-            background-color: transparent;
-            border: none
-        }
-
-        .modal-body {
-            position: relative;
-            padding: 20px
-        }
-
-        .fixed-footer {
-            background-color: #1e274b
-        }
-
-        .fixed-footer a {
-            background-color: inherit;
-            flex-basis: calc((100% - 15px*6)/5);
             max-width: 75px;
-            color: #fff;
-            font-size: var(--normal-font)
-        }
-
-        .fixed-footer a.active {
-            color: #ffd125
+            font-size: 12px
         }
 
         .fixed-footer .center {
-            transform: scale(1);
+            transform: scale(1.5) translateY(-5px);
             background: center no-repeat;
             background-size: contain;
             background-color: inherit;
@@ -777,445 +1045,426 @@
         }
 
         .fixed-footer amp-img {
-            max-width: 40%;
+            max-width: 30%;
             margin-bottom: 5px
         }
 
-        .fixed-footer .live-chat-icon {
-            animation: pulse 3s infinite
+        .tada {
+            -webkit-animation-name: tada;
+            animation-name: tada;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite
         }
 
-        .download-apk-container {
-            background: var(--image-src);
-            background-size: cover;
-            display: flex;
-            color: #fff;
-            align-items: center;
-            font-family: sans-serif
-        }
-
-        .download-apk-container .modal {
-            font-family: 'digital_sans_ef_medium'
-        }
-
-        .download-apk-container .popup-modal[data-title] .modal-title:before {
-            content: none
-        }
-
-        .download-apk-container .popup-modal .modal-header h4 {
-            font-size: 24px
-        }
-
-        .download-apk-container .popup-modal .modal-body {
-            padding-top: 0
-        }
-
-        .download-apk-container .popup-modal .modal-body img {
-            height: 20px;
-            width: 20px
-        }
-
-        .download-apk-container .popup-modal .modal-body h5 {
-            font-size: 18px;
-            color: inherit;
-            text-transform: uppercase;
-            margin-block-start: 0;
-            margin-block-end: 0
-        }
-
-        .download-apk-container .popup-modal .modal-body ol {
-            list-style: decimal;
-            padding-left: 5px;
-            line-height: 20px
-        }
-
-        .download-apk-container h2,
-        .download-apk-container h3 {
-            margin: 0
-        }
-
-        .download-apk-container h2 {
-            font-weight: 600;
-            font-size: var(--x-large-font);
-            text-transform: uppercase
-        }
-
-        .download-apk-container h3 {
-            font-size: var(--normal-font);
-            font-weight: 100
-        }
-
-        .download-apk-container a {
-            font-size: var(--normal-font);
-            text-transform: uppercase
-        }
-
-        .download-apk-container>div {
-            flex-basis: 50%
-        }
-
-        .download-apk-container>div:first-child {
-            align-self: flex-end
-        }
-
-        .download-apk-info {
-            display: flex;
-            justify-content: flex-start;
-            padding: 7px 0
-        }
-
-        .download-apk-info>div {
-            flex-basis: 45%;
-            max-width: 45%
-        }
-
-        .download-apk-section {
-            text-align: center;
-            margin-right: 5px
-        }
-
-        .download-apk-section a {
-            color: #fff;
-            text-transform: uppercase;
-            padding: 2px 0;
-            display: block;
-            border-radius: 20px;
-            text-align: center;
-            background: #f69c00;
-            background: linear-gradient(to bottom, #f69c00 0%, #d17601 100%)
-        }
-
-        .download-apk-guide {
-            text-decoration: underline;
-            color: #fff;
-            background-color: transparent;
-            border: none;
-            text-transform: uppercase;
-            font-size: var(--normal-font)
-        }
-
-        @media (max-width:575.98px) {
-            .download-apk-section amp-img {
-                width: 50px
-            }
-        }
-
-        .logo-container {
-            background-color: #000
-        }
-
-        .main-menu-container {
-            background-color: #0a0a0a
-        }
-
-        .main-menu-container li a {
-            color: #fff
-        }
-
-        .jackpot-container .jackpot-prize {
-            color: #baad6b
-        }
-
-        .jackpot-container .jackpot-currency {
-            color: #baad6b
-        }
-
-        .footer-container {
-            color: #fff;
-            font-family: system-ui
-        }
-
-        .footer-container .contact-list li a {
-            background-color: #585858;
-            color: #fff
-        }
-
-        .footer-container .contact-list>li a i {
-            background: #ffd125
-        }
-
-        .footer-container .bank-list span[data-online="true"] {
-            background-color: #0f0
-        }
-
-        .footer-container .bank-list span[data-online="false"] {
-            background-color: #e00
-        }
-
-        .footer-container .footer-links {
-            background-color: #1d1d1d
-        }
-
-        .footer-container .footer-links>li:not(:nth-child(5n+5)):not(:first-child) {
-            border-color: #ccc
-        }
-
-        .footer-container .footer-links li a {
-            color: #b9a353
-        }
-
-        .site-description {
-            background-color: black
-        }
-
-        .fixed-footer {
-            background-color: #1d1d1d
-        }
-
-        .fixed-footer a {
-            color: #fff;
-            font-family: system-ui
-        }
-
-        .fixed-footer a.active {
-            color: #ffd125
-        }
-
-        .modal-content h4 {
-            color: #b18f35
-        }
-
-        .download-apk-section a {
-            color: #fff;
-            background: #f8e689;
-            background: linear-gradient(to bottom, #f8e689 0%, #bf8e20 100%)
-        }
-
-        .kelapkelip {
-            font-family: tahoma, arial, helvetica, sans-serif;
-            font-size: 15px;
-            color: #999;
-            animation: kelapkelip 1s ease-out infinite
-        }
-
-        p,
-        li {
-            text-align: justify
-        }
-
-        @keyframes kelapkelip {
-            from {
-                text-shadow: 0px 0px 1px #def, 0px 0px 2px #def, 0px 0px 2px #def, 0px 0px 2px #def, 0px 0px 2px #def, 0px 0px 2px #def, 0px 0px 2px #fff, 0px 0px 12px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #7B96B8, 0px 0px 5px #7B96B8, 0px 5px 2px #ffffe8, 0px 5px 25px #ffffe8, 0px 5px 50px #e4be0d, 0px 5px 50px #e4be0d, 0px -5px 50px #e4be0d, 0px -5px 50px #e4be0d;
-                color: #fff, #fff, #fff, #ffffe8, #fdfebe, #fdff74, #ffe674, #e4be0d;
-            }
-        }
-
-        .faq .faq-title {
-            background-color: #ffd125;
-            padding: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            color: #000;
-            font-size: larger;
-            text-transform: capitalize;
-            font-weight: bolder
-        }
-
-        .faq .faq-desc {
-            background-color: transparent;
-            padding: 10px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            color: #fafafa
-        }
-
-        .faq .faq-desc li {
-            font-size: small;
-            color: #fffefe;
-            text-align: left
-        }
-
-        .faq {
-            margin: 7px
-        }
-
-        .carousel-container {
-            max-width: 900px;
-            max-height: 500px;
-            margin-top: 20px;
-            width: 95%;
-            height: 90%;
-            border-radius: 2px;
-        }
-
-        .neon-button:hover.active {
-            animation: animate 1s ease-out;
-        }
-
-        @keyframes animate {
+        @-webkit-keyframes tada {
             0% {
-                transform: translateY(0%);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
             }
 
-            50% {
-                transform: translateY(-10%);
+            10%,
+            20% {
+                -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+            }
+
+            40%,
+            60%,
+            80% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
             }
 
             100% {
-                transform: translateY(0%);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        @keyframes tada {
+            0% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
+            }
+
+            10%,
+            20% {
+                -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+                transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+            }
+
+            40%,
+            60%,
+            80% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        .site-description ul li {
+            list-style-type: square
+        }
+
+        .copyleft {
+            text-decoration: none;
+            color: #fff;
+            margin: 35px auto;
+            padding-bottom: 30px
+        }
+
+        p#breadcrumbs {
+            color: #fff;
+            text-align: center
+        }
+
+        .site-description h1,
+        .site-description h2,
+        .site-description h3,
+        .site-description h4,
+        .site-description h5,
+        .site-description a,
+        .copyleft a {
+            color: #ffd386
+        }
+
+        .site-description h1 {
+            font-size: 2em;
+            text-align: center
+        }
+
+        .site-description h2 {
+            font-size: 1.5em
+        }
+
+        .site-description h3 {
+            font-size: 1.25em
+        }
+
+        .site-description h4 {
+            font-size: 1.15em
+        }
+
+        .site-description h1,
+        .site-description h2,
+        .site-description h3,
+        .site-description h4,
+        .site-description h5 {
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 700;
+            color: #ffd386;
+            margin: 20px 0 20px 0
+        }
+
+        h2.subtitle {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            opacity: .9;
+            color: #b9b9b9
+        }
+
+        p#metadesc {
+            margin: 2rem;
+            font-size: 1.25rem;
+            text-align: center;
+            color: #b9b9b9
+        }
+
+        .container-game-new {
+            padding: 30px 10px
+        }
+
+        .container-global {
+            max-width: 1000px;
+            margin: 0 auto
+        }
+
+        .game-new {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 30px;
+            padding: 20px 0
+        }
+
+        .list-new {
+            padding: 3px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: #eee;
+            background-image: url(https://i.postimg.cc/cLfVfKPf/nav-lines.png);
+            box-shadow: rgb(50 50 93/25%) 0 6px 12px -2px, rgb(0 0 0/30%) 0 3px 7px -3px
+        }
+
+        .list-new img {
+            border-radius: 10px 10px 0 0;
+            padding: 5px
+        }
+
+        .list-new-desc {
+            margin: 10px;
+            overflow: hidden;
+            height: 65px
+        }
+
+        .list-new-desc h5 {
+            color: #000;
+            font-size: 14px
+        }
+
+        .list-new-row-desc {
+            text-align: center
+        }
+
+        .button-30 {
+            align-items: center;
+            appearance: none;
+            background-color: #fcfcfd;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgb(45 35 66/40%) 0 2px 4px, rgb(45 35 66/30%) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395a;
+            cursor: pointer;
+            display: inline-flex;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow 0.15s, transform 0.15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+            font-weight: 700
+        }
+
+        .list-new-row-provider {
+            text-align: center;
+            margin: 10px
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .button-30:active {
+            box-shadow: #d6d6e7 0 3px 7px inset;
+            transform: translatey(2px)
+        }
+
+        .button-30:hover {
+            box-shadow: rgb(45 35 66/40%) 0 4px 8px, rgb(45 35 66/30%) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+            transform: translatey(-2px)
+        }
+
+        .list-new-row-desc a {
+            color: #111
+        }
+
+        .site-description p {
+            font-size: 15px
+        }
+
+        @media (max-width:800px) {
+            .game-new {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 5px
             }
         }
     </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
     <script type="application/ld+json">
-        {
-        "@context": "http://schema.org",
-        "@type": "NewsArticle",
-        "mainEntityOfPage":{
-        "@type":"WebPage",
-        "@id":"https://{{account}}.github.io/{{repository}}/{{filename}}"
-        },
-        "headline": "{{title}}",
-        "image": {
-        "@type": "ImageObject",
-        "url": "{{image-banner}}"
-        },
-        "datePublished": "2024-09-23T22:08:27+00:00",
-        "dateModified": "2024-09-23T22:08:27+00:00",
-        "author": {
-        "@type":"Person",
-        "name": "{{metaSource}}",
-        "url": "https://{{account}}.github.io/{{repository}}/{{filename}}"
-        },
-        "publisher": {
-        "@type": "Organization",
-        "name": "{{metaSource}}",
-        "logo": {
-        "@type": "ImageObject",
-        "url": "{{imageLogo}}"
-        }
-        },
-        "description": "{{meta-description}}"
-        }
-    </script>
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "{{metaSource}}",
+              "alternateName": "{{metaSource}}",
+              "url": "https://{{account}}.github.io/{{repository}}/{{filename}}",
+              "logo": "{{imageLogo}}",
+              "sameAs": "https://{{account}}.github.io/{{repository}}/{{filename}}"
+            }
+        </script>
+    <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://{{account}}.github.io/{{repository}}/{{filename}}"
+              },
+              "headline": "{{title}}",
+              "description": "{{meta-description}}",
+              "image":{
+                "@type": "ImageObject",
+                "url": "{{image-banner}}"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "{{metaSource}}",
+                "url": "https://{{account}}.github.io/{{repository}}/{{filename}}"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "{{metaSource}}",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "{{imageLogo}}"
+                }
+              },
+              "datePublished": "2024-10-01T17:13:00+00:00",
+              "dateModified": "2024-10-01T17:13:00+00:00"
+            }
+          </script>
 </head>
 
 <body>
-    <!-- Banner Logo-->
     <div class="logo-container">
         <a href="https://{{account}}.github.io/{{repository}}/{{filename}}" class="logo">
-            <amp-img title="{{metaSource}}" layout="responsive" height="50" width="120"
-                src="{{imageLogo}}"
-                alt="{{metaSource}}" noloading></amp-img>
+            <amp-img alt="{{metaSource}}" layout="responsive" height="102" width="336"
+                src="{{imageLogo}}" noloading></amp-img>
         </a>
-    </div>
-    <!-- Banner Gambar-->
-    <div class="carousel-container container">
-        <amp-img title="{{metaSource}}"
-            src="{{image-banner}}"
-            alt="{{metaSource}}" width="1000px" height="500px" layout="responsive"></amp-img>
-    </div>
-
-    <div class="link-container container">
-        <a id="link_daftar" class="animated-button1 neon-button active" target="_blank"
-            rel="nofollow noopener"><span></span>
-            <span></span>
-            <span></span>
-            <span></span>Daftar</a>
-        <a id="link_klaim_vip" class="animated-button1 neon-button active" target="_blank"
-            rel="nofollow noopener"><span></span><span></span><span></span><span></span>Klaim VIP</a>
-    </div>
-
-
-    <footer class="footer-container container">
-        <br>
-        <table class="LinkgameGacor" style="width:100%">
-            <thead>
-                <tr>
-                    <th colspan="3">
-                        <p style="text-align: center;">Klaim Bonus VIP, DAFTAR SEKARANG JUGA</p>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Min. Deposit</td>
-                    <td>Rp 10.000</td>
-                </tr>
-                <tr>
-                    <td>Situs</td>
-                    <td>{{metaSource}}</td>
-                </tr>
-                <tr>
-                    <td>Jenis Permainan</td>
-                    <td>Game Online, Casino Online, Sportsbook , Tembak Ikan , Virtual Sports</td>
-                </tr>
-                <tr>
-                    <td>Mata Uang</td>
-                    <td>IDR (Indonesian Rupiah)</td>
-                </tr>
-                <tr>
-                    <td>Metode Deposit</td>
-                    <td>Semua Bank Indonesia, E-Wallet (Ovo, Dana, Gopay, LinkAja, Sakuku) </td>
-                </tr>
-                <tr>
-                    <td>Bank</td>
-                    <td>24 Jam Online</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <p id="breadcrumbs">
-            <span>
-                <span>
-                    <p style="text-align: center;margin-top:-20px;">
-                        <a
-                            href="https://{{account}}.github.io/{{repository}}/{{filename}}">Home</a>
-                        &#187; <a id="link_bonus_vip">Bonus VIP</a> &#187; <strong
-                            class="breadcrumb_last" aria-current="page"><a
-                                id="link_pola_gacor">Pola Gacor Hari Ini</a></strong>
-                    </p>
-                </span>
+        <div class="header-right">
+            <span class="register-section">
+                <a id="link_daftar" target="_blank" rel="nofollow noreferrer"
+                    class="register-button">Daftar</a></span>
+            <span class="register-section">
+                <a id="link_login" target="_blank" rel="nofollow noreferrer"
+                    class="login-button">Login</a>
             </span>
-        </p>
-
-        {{content}}
-        
-        <div class="copyright">
-            <div>
-                <strong>Copyright <a
-                        href="https://{{account}}.github.io/{{repository}}/{{filename}}">{{metaSource}}</a> ©2024</strong><br />
+        </div>
+    </div>
+    <amp-carousel class="carousel-container" layout="responsive" width="720" height="400" type="slides" autoplay
+        delay="4000" loop>
+        <amp-img title="{{metaSource}}" src="{{image-banner}}" alt="{{metaSource}}" width="720" height="400"
+            layout="responsive"></amp-img>
+    </amp-carousel>
+    <footer class="footer-container">
+        <div class="post-content-container">
+            <ul class="contact-list container">
+                <li>
+                    <a id="link_login" target="_blank" rel="nofollow noreferrer">
+                        <i><amp-img layout="responsive" height="80" width="80"
+                                src="https://www.keladang.com/wp-content/uploads/2024/09/tombol-login.png"></amp-img></i>Login
+                    </a>
+                </li>
+                <li>
+                    <a id="link_daftar" target="_blank" rel="nofollow noreferrer">
+                        <i><amp-img layout="responsive" height="80" width="80"
+                                src="https://www.keladang.com/wp-content/uploads/2024/09/tombol-daftar.png"></amp-img></i>Daftar
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <table class="tbuah" style="width:100%">
+                <thead>
+                    <tr>
+                        <th colspan="3">Informasi Penting Situs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px;">Nama Situs</td>
+                        <td style="padding: 10px;">{{whitelabel}}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Deposit Minimal</td>
+                        <td style="padding: 10px;">🤑Rp10.000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Promo TerSensasional</td>
+                        <td style="padding: 10px;">🔥Bonus Member Baru 100%</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Game Paling Gacor</td>
+                        <td style="padding: 10px;">⚡ Gates of Olympus, 👑 Starlight Princess, 🀄 Mahjong Ways, 🌸 Lucky
+                            Neko</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Provider Andalan Terbaik</td>
+                        <td style="padding: 10px;">👍Pragmatic Play, PG Soft, Joker Gaming</td>
+                    </tr>
+                    <td style="padding: 10px;">Metode Transaksi</td>
+                    <td style="padding: 10px;">💨Transfer Bank, E-Wallet Dana, Qris</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Jam Operasional</td>
+                        <td style="padding: 10px;">⚡Online 24 Jam</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="site-description">
+                {{content}}
             </div>
         </div>
     </footer>
     <div class="fixed-footer">
-        <a id="link_footer_daftar" target="_blank" rel="nofollow noopener">
-            <amp-img class="center" layout="intrinsic" height="75" width="75"
-                src="https://res.cloudinary.com/dak0kqjx3/image/upload/v1727246014/home_lqmasj.webp"
-                alt="daftar"></amp-img>
-            DAFTAR
-        </a>
-        <a id="link_footer_login"  target="_blank" rel="nofollow noopener">
+        <a id="link_footer_whatsapp" rel="nofollow noreferrer" target="_blank">
             <amp-img layout="intrinsic" height="75" width="75"
-                src="https://res.cloudinary.com/dak0kqjx3/image/upload/v1727246014/login_yur3td.webp"
-                alt="login"></amp-img>
-            LOGIN
+                src="https://www.keladang.com/wp-content/uploads/2024/09/wa.png"></amp-img>
+            WhatsApp
         </a>
-        <a href="{{liveChatUrl}}" target="_blank" class="js_live_chat_link live-chat-link">
-            <amp-img class="live-chat-icon" layout="intrinsic" height="75" width="75"
-                src="https://res.cloudinary.com/dak0kqjx3/image/upload/v1727246014/livechat_dhmswk.webp"
-                alt="livechat"></amp-img>
-            LIVE CHAT
+        <a id="link_footer_daftar" rel="nofollow noreferrer" class="tada">
+            <amp-img class="center" layout="intrinsic" height="110" width="110"
+                src="https://www.keladang.com/wp-content/uploads/2024/09/daftarku.jpg"></amp-img>
+            Daftar
+        </a>
+        <a href="{{liveChatUrl}}" rel="nofollow noreferrer" target="_blank">
+            <amp-img layout="intrinsic" height="75" width="75"
+                src="https://www.keladang.com/wp-content/uploads/2024/09/lc.png"></amp-img>
+            Livechat
         </a>
     </div>
-    
+
     <!-- Script forward query string -->
     <script async>
         const domainName = "{{domainUrl}}";
         const queryString = window.location.search;
 
         const link1 = document.getElementById('link_daftar');
-        const link2 = document.getElementById('link_klaim_vip');
-        const link3 = document.getElementById('link_bonus_vip');
-        const link4 = document.getElementById('link_pola_gacor');
-        const link5 = document.getElementById('link_footer_daftar');
-        const link6 = document.getElementById('link_footer_login');
+        const link2 = document.getElementById('link_login');
+        const link3 = document.getElementById('link_footer_daftar');
+        const link4 = document.getElementById('link_footer_whatsapp');
 
         link1.href = domainName + queryString;
         link2.href = domainName + queryString;
         link3.href = domainName + queryString;
         link4.href = domainName + queryString;
-        link5.href = domainName + queryString;
-        link6.href = domainName + queryString;
     </script>
 </body>
 
