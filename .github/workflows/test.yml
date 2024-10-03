@@ -78,8 +78,7 @@ jobs:
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
                 -e "s|{{content}}|$escaped_content|g" \
-                "$templateFile" > "generated_html/$filename"
-
+                "$templateFile" > "$filename"
           done
 
       - name: Commit and push changes
