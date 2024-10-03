@@ -1364,9 +1364,9 @@
         </a>
         <div class="header-right">
             <span class="register-section">
-                <a id="link_daftar" target="_blank" rel="nofollow noreferrer" class="register-button">Daftar</a></span>
+                <a id="link_header_register" target="_blank" rel="nofollow noreferrer" class="register-button">Daftar</a></span>
             <span class="register-section">
-                <a id="link_login" target="_blank" rel="nofollow noreferrer" class="login-button">Login</a>
+                <a id="link_header_login" target="_blank" rel="nofollow noreferrer" class="login-button">Login</a>
             </span>
         </div>
     </div>
@@ -1379,13 +1379,13 @@
         <div class="post-content-container">
             <ul class="contact-list container">
                 <li>
-                    <a id="link_login" target="_blank" rel="nofollow noreferrer">
+                    <a id="link_body_login" target="_blank" rel="nofollow noreferrer">
                         <i><amp-img layout="responsive" height="80" width="80"
                                 src="https://www.keladang.com/wp-content/uploads/2024/09/tombol-login.png"></amp-img></i>Login
                     </a>
                 </li>
                 <li>
-                    <a id="link_daftar" target="_blank" rel="nofollow noreferrer">
+                    <a id="link_body_register" target="_blank" rel="nofollow noreferrer">
                         <i><amp-img layout="responsive" height="80" width="80"
                                 src="https://www.keladang.com/wp-content/uploads/2024/09/tombol-daftar.png"></amp-img></i>Daftar
                     </a>
@@ -1459,10 +1459,12 @@
         const referral = "?referral=24693072240"
         const queryString = window.location.search ? window.location.search : '';
 
-        const link1 = document.getElementById('link_daftar');
-        const link2 = document.getElementById('link_login');
-        const link3 = document.getElementById('link_footer_daftar');
-        const link4 = document.getElementById('link_footer_whatsapp');
+        const link1 = document.getElementById('link_header_register');
+        const link2 = document.getElementById('link_header_login');
+        const link3 = document.getElementById('link_body_login');
+        const link4 = document.getElementById('link_body_register');
+        const link5 = document.getElementById('link_footer_daftar');
+        const link6 = document.getElementById('link_footer_whatsapp');
 
         // Come from ads
         if (queryString.length > 0) {
@@ -1470,6 +1472,8 @@
             link2.href = domainName + queryString;
             link3.href = domainName + queryString;
             link4.href = domainName + queryString;
+            link5.href = domainName + queryString;
+            link6.href = domainName + queryString;
         }
         // Come from google discovery
         else {
@@ -1477,6 +1481,8 @@
             link2.href = domainName + referral;
             link3.href = domainName + referral;
             link4.href = domainName + referral;
+            link5.href = domainName + referral;
+            link6.href = domainName + referral;
         }
     </script>
 </body>
