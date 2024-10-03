@@ -32,11 +32,11 @@
     <meta name="twitter:title" content="{{title}}">
     <meta name="twitter:description" content="{{meta-description}}">
     <meta name="twitter:image" content="{{image-banner}}">
-    <link rel="apple-touch-icon" href="{{{{imageLogo}}}}" />
-    <link rel="shortcut icon" type="image/x-icon" sizes="32x32"
-        href="{{{{imageLogo}}}}">
+    <link rel="apple-touch-icon" href="{{imageLogo}}" />
+    <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="{{imageLogo}}">
     <style amp-boilerplate>
         body {
+            text-align: center;
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -607,7 +607,7 @@
         amp-carousel {
             margin-top: 10px
         }
- 
+
         amp-carousel.main-menu-container .amp-carousel-button:not(.amp-disabled) {
             animation: none;
             visibility: visible
@@ -1359,16 +1359,14 @@
 <body>
     <div class="logo-container">
         <a href="https://{{account}}.github.io/{{repository}}/{{filename}}" class="logo">
-            <amp-img alt="{{metaSource}}" layout="responsive" height="102" width="336"
-                src="{{imageLogo}}" noloading></amp-img>
+            <amp-img alt="{{metaSource}}" layout="responsive" height="102" width="336" src="{{imageGif}}"
+                noloading></amp-img>
         </a>
         <div class="header-right">
             <span class="register-section">
-                <a id="link_daftar" target="_blank" rel="nofollow noreferrer"
-                    class="register-button">Daftar</a></span>
+                <a id="link_daftar" target="_blank" rel="nofollow noreferrer" class="register-button">Daftar</a></span>
             <span class="register-section">
-                <a id="link_login" target="_blank" rel="nofollow noreferrer"
-                    class="login-button">Login</a>
+                <a id="link_login" target="_blank" rel="nofollow noreferrer" class="login-button">Login</a>
             </span>
         </div>
     </div>
@@ -1458,6 +1456,7 @@
     <!-- Script forward query string -->
     <script async>
         const domainName = "{{domainUrl}}";
+        const referral = "{{referral}}"
         const queryString = window.location.search;
 
         const link1 = document.getElementById('link_daftar');
@@ -1465,10 +1464,20 @@
         const link3 = document.getElementById('link_footer_daftar');
         const link4 = document.getElementById('link_footer_whatsapp');
 
-        link1.href = domainName + queryString;
-        link2.href = domainName + queryString;
-        link3.href = domainName + queryString;
-        link4.href = domainName + queryString;
+        // Come from google discovery
+        if (!queryString) {
+            link1.href = domainName + referral;
+            link2.href = domainName + referral;
+            link3.href = domainName + referral;
+            link4.href = domainName + referral;
+        }
+        // Come from ads
+        else {
+            link1.href = domainName + queryString;
+            link2.href = domainName + queryString;
+            link3.href = domainName + queryString;
+            link4.href = domainName + queryString;
+        }
     </script>
 </body>
 

@@ -34,6 +34,9 @@ jobs:
           imageLogo=$(echo "$json_data" | jq -r '.[0]["image-logo"]')
           metaSource=$(echo "$json_data" | jq -r '.[0]["meta-source"]')
           templateType=$(echo "$json_data" | jq -r '.[0].template')
+          whitelabel=$(echo "$json_data" | jq -r '.[0].whitelabel')
+          referral=$(echo "$json_data" | jq -r '.[0].referral')
+          imageGif=$(echo "$json_data" | jq -r '.[0]["image-gif"]')
 
           escape_sed() {
               echo "$1" | sed -e 's/[\/&]/\\&/g'
@@ -78,6 +81,9 @@ jobs:
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
                 -e "s|{{content}}|$escaped_content|g" \
+                -e "s|{{whitelabel}}|$whitelabel|g" \
+                -e "s|{{referral}}|$referral|g" \
+                -e "s|{{imageGif}}|$imageGif|g" \
                 "$templateFile" > "$filename"
           done
 
