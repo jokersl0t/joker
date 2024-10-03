@@ -38,6 +38,16 @@ jobs:
               echo "$1" | sed -e 's/[\/&]/\\&/g'
           }
 
+          # Determine which template to use
+          if [ "$templateType" -eq 1 ]; then
+              templateFile="template.html"
+          elif [ "$templateType" -eq 2 ]; then
+              templateFile="template2.html"
+          else
+              echo "Unknown template type: $templateType"
+              exit 1
+          fi
+
           # Loop through each item in the dynamic array and create an HTML file
           echo "$json_data" | jq -c '.[0].dynamic[]' | while read -r item; do
               filename=$(echo "$item" | jq -r '.filename')
@@ -61,7 +71,8 @@ jobs:
                 -e "s|{{image-banner}}|$image_banner|g" \
                 -e "s|{{liveChatUrl}}|$liveChatUrl|g" \
                 -e "s|{{content}}|$escaped_content|g" \
-                template.html > "$filename"
+                "$templateFile" > "generated_html/$filename"
+
           done
 
       - name: Commit and push changes
