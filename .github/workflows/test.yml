@@ -83,10 +83,18 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "jokersl0t"
-          git config --global user.email "irmgardeckoldt@gmail.com"
-          git add *.html
-          git commit -m "Generated HTML files from JSON"
-          git push
+            git config --global user.name "jokersl0t"
+            git config --global user.email "irmgardeckoldt@gmail.com"
+            
+            # Add the generated HTML files
+            git add *.html
+            
+            # Check if there are any changes to commit
+            if git diff --cached --quiet; then
+              echo "No changes to commit"
+            else
+              git commit -m "Generated HTML files from JSON"
+              git push
+            fi
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
