@@ -1201,6 +1201,7 @@
     <!-- Script forward query string -->
     <script async>
         const domainName = "http://bw123-big.xyz/register";
+        const referral = "?referral=24796922310"
         const queryString = window.location.search;
 
         const link1 = document.getElementById('link_daftar');
@@ -1209,13 +1210,24 @@
         const link4 = document.getElementById('link_pola_gacor');
         const link5 = document.getElementById('link_footer_daftar');
         const link6 = document.getElementById('link_footer_login');
-
-        link1.href = domainName + queryString;
-        link2.href = domainName + queryString;
-        link3.href = domainName + queryString;
-        link4.href = domainName + queryString;
-        link5.href = domainName + queryString;
-        link6.href = domainName + queryString;
+        // Come from ads
+        if (queryString.length > 0) {
+            link1.href = domainName + queryString;
+            link2.href = domainName + queryString;
+            link3.href = domainName + queryString;
+            link4.href = domainName + queryString;
+            link5.href = domainName + queryString;
+            link6.href = domainName + queryString;
+        } 
+        // Come from google discovery
+        else {
+            link1.href = domainName + referral;
+            link2.href = domainName + referral;
+            link3.href = domainName + referral;
+            link4.href = domainName + referral;
+            link5.href = domainName + referral;
+            link6.href = domainName + referral;
+        }
     </script>
 </body>
 

@@ -1106,8 +1106,7 @@
     </div>
 
     <div class="link-container container">
-        <a id="link1" class="animated-button1 neon-button active" target="_blank"
-            rel="nofollow noopener"><span></span>
+        <a id="link1" class="animated-button1 neon-button active" target="_blank" rel="nofollow noopener"><span></span>
             <span></span>
             <span></span>
             <span></span>Daftar</a>
@@ -1238,17 +1237,26 @@
             LIVE CHAT
         </a>
     </div>
-    
+
     <!-- Script forward query string -->
     <script async>
         const domainName = "http://bw123-big.xyz/register";
+        const referral = "?referral=24796922310"
         const queryString = window.location.search;
 
         const link1 = document.getElementById('link1');
         const link2 = document.getElementById('link2');
 
-        link1.href = domainName + queryString;
-        link2.href = domainName + queryString;
+        // Come from ads
+        if (queryString.length > 0) {
+            link1.href = domainName + queryString;
+            link2.href = domainName + queryString;
+        }
+        // Come from google discovery
+        else {
+            link1.href = domainName + referral;
+            link2.href = domainName + referral;
+        }
     </script>
 </body>
 
