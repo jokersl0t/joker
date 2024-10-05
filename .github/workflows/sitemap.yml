@@ -1,0 +1,72 @@
+name: Sitemap Workflow
+
+on:
+  workflow_run:
+    workflows: ["Generate Workflow"]
+    types:
+      - completed
+      
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Update index.html
+        run: |
+          # Define variables
+          REPO_URL="https://jokersl0t.github.io/joker/"
+          INDEX_FILE="index.html"
+          EXCLUDE_FILES=("index.html" "template.html" "template2.html")
+
+          # Start the index.html content
+          echo '<!DOCTYPE html>' > $INDEX_FILE
+          echo '<html lang="en">' >> $INDEX_FILE
+          echo '<head>' >> $INDEX_FILE
+          echo '    <meta charset="UTF-8">' >> $INDEX_FILE
+          echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $INDEX_FILE
+          echo '    <title>Document</title>' >> $INDEX_FILE
+          echo '    <!-- Google tag (gtag.js) -->' >> $INDEX_FILE
+          echo '    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYM2HYL2Z2"></script>' >> $INDEX_FILE
+          echo '    <script>' >> $INDEX_FILE
+          echo '        window.dataLayer = window.dataLayer || [];' >> $INDEX_FILE
+          echo '        function gtag() { dataLayer.push(arguments); }' >> $INDEX_FILE
+          echo '        gtag("js", new Date());' >> $INDEX_FILE
+          echo '        gtag("config", "G-DYM2HYL2Z2");' >> $INDEX_FILE
+          echo '    </script>' >> $INDEX_FILE
+          echo '</head>' >> $INDEX_FILE
+          echo '<body>' >> $INDEX_FILE
+
+          # Loop through all HTML files and create anchor tags
+          for FILE in *.html; do
+              # Check if the file is in the exclude list
+              if [[ ! " ${EXCLUDE_FILES[@]} " =~ " ${FILE} " ]]; then
+                  echo "    <a href=\"${REPO_URL}${FILE}\">" >> $INDEX_FILE
+                  echo "        <p>${FILE}</p>" >> $INDEX_FILE
+                  echo "    </a>" >> $INDEX_FILE
+              fi
+          done
+
+          echo '</body>' >> $INDEX_FILE
+          echo '</html>' >> $INDEX_FILE
+
+      - name: Commit and push changes
+        run: |
+              git config --global user.name "jokersl0t"
+              git config --global user.email "irmgardeckoldt@gmail.com"
+              
+              # Add the generated HTML files
+              git add *.html
+              
+              # Check if there are any changes to commit
+              if git diff --cached --quiet; then
+                echo "No changes to commit"
+              else
+                git commit -m "Generated HTML files from JSON"
+                git push
+              fi
+        env:
+            GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  
