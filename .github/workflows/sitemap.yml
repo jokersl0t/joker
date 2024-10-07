@@ -76,36 +76,29 @@ jobs:
         run: |
             # Define variables
             SITEMAP_FILE="sitemap.xml"
-
-            # Create or update the sitemap.xml
-            if [ ! -f "$SITEMAP_FILE" ]; then
-              echo '<?xml version="1.0" encoding="UTF-8"?>' > $SITEMAP_FILE
-              echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $SITEMAP_FILE
-            fi
+            JSON_FILE="index.json"
+            REPO_URL="https://jokersl0t.github.io/joker/"
   
-            # Read index.json and add new URLs to the sitemap
+            # Start the sitemap.xml content
+            echo '<?xml version="1.0" encoding="UTF-8"?>' > $SITEMAP_FILE
+            echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' >> $SITEMAP_FILE
+            echo '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' >> $SITEMAP_FILE
+            echo '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9' >> $SITEMAP_FILE
+            echo '        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' >> $SITEMAP_FILE
+  
+            # Process index.json to add URLs
             jq -c '.[]' $JSON_FILE | while read -r item; do
                 FILENAME=$(echo $item | jq -r '.filename')
   
-                # Check if the file is in the exclude list
-                if [[ ! " ${EXCLUDE_FILES[@]} " =~ " ${FILENAME} " ]]; then
-                    URL="${REPO_URL}${FILENAME}"
-  
-                    # Check if the URL already exists in sitemap.xml
-                    if ! grep -q "$URL" $SITEMAP_FILE; then
-                        echo "<url>" >> $SITEMAP_FILE
-                        echo "  <loc>$URL</loc>" >> $SITEMAP_FILE
-                        echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</lastmod>" >> $SITEMAP_FILE
-                        echo "  <priority>0.80</priority>" >> $SITEMAP_FILE
-                        echo "</url>" >> $SITEMAP_FILE
-                    fi
-                fi
+                echo '<url>' >> $SITEMAP_FILE
+                echo "  <loc>${REPO_URL}${FILENAME}</loc>" >> $SITEMAP_FILE
+                echo "  <lastmod>$(date +"%Y-%m-%dT%H:%M:%S+00:00")</lastmod>" >> $SITEMAP_FILE
+                echo "  <priority>0.80</priority>" >> $SITEMAP_FILE
+                echo '</url>' >> $SITEMAP_FILE
             done
   
-            # Close the sitemap if it's newly created
-            if ! grep -q "</urlset>" $SITEMAP_FILE; then
-                echo '</urlset>' >> $SITEMAP_FILE
-            fi
+            # Close the sitemap.xml
+            echo '</urlset>' >> $SITEMAP_FILE
 
       - name: Commit and push changes
         run: |
@@ -113,7 +106,7 @@ jobs:
               git config --global user.email "irmgardeckoldt@gmail.com"
               
               # Add the generated HTML files
-              git add *.html $SITEMAP_FILE
+              git add *.html *.xml
               
               # Check if there are any changes to commit
               if git diff --cached --quiet; then
