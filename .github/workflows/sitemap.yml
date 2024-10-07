@@ -81,20 +81,33 @@ jobs:
             # Backup the current sitemap.xml and remove the closing </urlset> tag
             sed -i '$ d' $SITEMAP_FILE
             
-            # Read index.json and append new <url> entries
+            # Function to check if a URL already exists in the sitemap
+            function url_exists() {
+                local url="$1"
+                grep -q "<loc>${url}</loc>" $SITEMAP_FILE
+            }
+        
+            # Read index.json and append new <url> entries if they don't already exist
             jq -c '.[]' $JSON_FILE | while read -r item; do
                 FILENAME=$(echo $item | jq -r '.filename')
                 LASTMOD=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
+                URL="https://jokersl0t.github.io/joker/${FILENAME}"
         
-                echo "  <url>" >> $SITEMAP_FILE
-                echo "    <loc>https://jokersl0t.github.io/joker/${FILENAME}</loc>" >> $SITEMAP_FILE
-                echo "    <lastmod>${LASTMOD}</lastmod>" >> $SITEMAP_FILE
-                echo "    <priority>0.80</priority>" >> $SITEMAP_FILE
-                echo "  </url>" >> $SITEMAP_FILE
+                # Check if the URL is already in the sitemap
+                if ! url_exists "$URL"; then
+                    echo "  <url>" >> $SITEMAP_FILE
+                    echo "    <loc>${URL}</loc>" >> $SITEMAP_FILE
+                    echo "    <lastmod>${LASTMOD}</lastmod>" >> $SITEMAP_FILE
+                    echo "    <priority>0.80</priority>" >> $SITEMAP_FILE
+                    echo "  </url>" >> $SITEMAP_FILE
+                else
+                    echo "URL ${URL} already exists in the sitemap. Skipping."
+                fi
             done
         
             # Re-add the closing </urlset> tag
             echo "</urlset>" >> $SITEMAP_FILE
+        
 
       - name: Commit and push changes
         run: |
