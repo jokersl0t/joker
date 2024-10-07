@@ -78,9 +78,8 @@ jobs:
             SITEMAP_FILE="sitemap.xml"
             JSON_FILE="index.json"
         
-            # Preserve the opening tags and header of the sitemap.xml
-            # We assume the header and initial <urlset> tag is in the first few lines.
-            HEADER=$(head -n 10 $SITEMAP_FILE | grep -v '</urlset>')
+            # Preserve the header of the sitemap.xml
+            HEADER=$(head -n 4 $SITEMAP_FILE)  # Adjust line count if needed
         
             # Create a temporary file for the updated sitemap
             TEMP_FILE="sitemap_temp.xml"
