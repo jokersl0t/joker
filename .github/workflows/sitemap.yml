@@ -77,38 +77,35 @@ jobs:
             # Define variables
             SITEMAP_FILE="sitemap.xml"
             JSON_FILE="index.json"
-            
-            # Backup the current sitemap.xml and remove the closing </urlset> tag
-            sed -i '$ d' $SITEMAP_FILE
-            
-            # Function to check if a URL already exists in the sitemap
-            function url_exists() {
-                local url="$1"
-                grep -q "<loc>${url}</loc>" $SITEMAP_FILE
-            }
         
-            # Read index.json and append new <url> entries if they don't already exist
+            # Preserve the opening tags and header of the sitemap.xml
+            # We assume the header and initial <urlset> tag is in the first few lines.
+            HEADER=$(head -n 10 $SITEMAP_FILE | grep -v '</urlset>')
+        
+            # Create a temporary file for the updated sitemap
+            TEMP_FILE="sitemap_temp.xml"
+        
+            # Start the new sitemap with the preserved header
+            echo "$HEADER" > $TEMP_FILE
+        
+            # Read index.json and append new <url> entries
             jq -c '.[]' $JSON_FILE | while read -r item; do
                 FILENAME=$(echo $item | jq -r '.filename')
                 LASTMOD=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
-                URL="https://jokersl0t.github.io/joker/${FILENAME}"
         
-                # Check if the URL is already in the sitemap
-                if ! url_exists "$URL"; then
-                    echo "  <url>" >> $SITEMAP_FILE
-                    echo "    <loc>${URL}</loc>" >> $SITEMAP_FILE
-                    echo "    <lastmod>${LASTMOD}</lastmod>" >> $SITEMAP_FILE
-                    echo "    <priority>0.80</priority>" >> $SITEMAP_FILE
-                    echo "  </url>" >> $SITEMAP_FILE
-                else
-                    echo "URL ${URL} already exists in the sitemap. Skipping."
-                fi
+                echo "  <url>" >> $TEMP_FILE
+                echo "    <loc>https://jokersl0t.github.io/joker/${FILENAME}</loc>" >> $TEMP_FILE
+                echo "    <lastmod>${LASTMOD}</lastmod>" >> $TEMP_FILE
+                echo "    <priority>0.80</priority>" >> $TEMP_FILE
+                echo "  </url>" >> $TEMP_FILE
             done
         
             # Re-add the closing </urlset> tag
-            echo "</urlset>" >> $SITEMAP_FILE
+            echo "</urlset>" >> $TEMP_FILE
         
-
+            # Replace the old sitemap with the new one
+            mv $TEMP_FILE $SITEMAP_FILE
+        
       - name: Commit and push changes
         run: |
               git config --global user.name "jokersl0t"
