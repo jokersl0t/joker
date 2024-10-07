@@ -74,26 +74,35 @@ jobs:
 
       - name: Update sitemap.xml
         run: |
-          SITEMAP_FILE="sitemap.xml"
-          DATE=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
-
-          # Start the sitemap.xml content
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > $SITEMAP_FILE
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $SITEMAP_FILE
-
-          # Loop through all HTML files and add them to the sitemap
-          for file in *.html; do
-              if [[ ! " ${EXCLUDE_FILES[@]} " =~ " ${file} " ]]; then
-                  echo "<url>" >> $SITEMAP_FILE
-                  echo "  <loc>${REPO_URL}${file}</loc>" >> $SITEMAP_FILE
-                  echo "  <lastmod>${DATE}</lastmod>" >> $SITEMAP_FILE
-                  echo "  <priority>0.80</priority>" >> $SITEMAP_FILE
-                  echo "</url>" >> $SITEMAP_FILE
-              fi
-          done
-
-          # End the sitemap.xml content
-          echo '</urlset>' >> $SITEMAP_FILE
+            # Create or update the sitemap.xml
+            if [ ! -f "$SITEMAP_FILE" ]; then
+              echo '<?xml version="1.0" encoding="UTF-8"?>' > $SITEMAP_FILE
+              echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $SITEMAP_FILE
+            fi
+  
+            # Read index.json and add new URLs to the sitemap
+            jq -c '.[]' $JSON_FILE | while read -r item; do
+                FILENAME=$(echo $item | jq -r '.filename')
+  
+                # Check if the file is in the exclude list
+                if [[ ! " ${EXCLUDE_FILES[@]} " =~ " ${FILENAME} " ]]; then
+                    URL="${REPO_URL}${FILENAME}"
+  
+                    # Check if the URL already exists in sitemap.xml
+                    if ! grep -q "$URL" $SITEMAP_FILE; then
+                        echo "<url>" >> $SITEMAP_FILE
+                        echo "  <loc>$URL</loc>" >> $SITEMAP_FILE
+                        echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</lastmod>" >> $SITEMAP_FILE
+                        echo "  <priority>0.80</priority>" >> $SITEMAP_FILE
+                        echo "</url>" >> $SITEMAP_FILE
+                    fi
+                fi
+            done
+  
+            # Close the sitemap if it's newly created
+            if ! grep -q "</urlset>" $SITEMAP_FILE; then
+                echo '</urlset>' >> $SITEMAP_FILE
+            fi
 
       - name: Commit and push changes
         run: |
