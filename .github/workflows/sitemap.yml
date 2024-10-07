@@ -74,6 +74,9 @@ jobs:
 
       - name: Update sitemap.xml
         run: |
+            # Define variables
+            SITEMAP_FILE="sitemap.xml"
+
             # Create or update the sitemap.xml
             if [ ! -f "$SITEMAP_FILE" ]; then
               echo '<?xml version="1.0" encoding="UTF-8"?>' > $SITEMAP_FILE
@@ -110,7 +113,7 @@ jobs:
               git config --global user.email "irmgardeckoldt@gmail.com"
               
               # Add the generated HTML files
-              git add *.html
+              git add *.html $SITEMAP_FILE
               
               # Check if there are any changes to commit
               if git diff --cached --quiet; then
