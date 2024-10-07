@@ -78,42 +78,37 @@ jobs:
             SITEMAP_FILE="sitemap.xml"
             JSON_FILE="index.json"
         
-            # Backup the current sitemap.xml and remove the closing </urlset> tag
-            sed -i '$ d' $SITEMAP_FILE
-        
             # Create a temporary file for the updated sitemap
             TEMP_FILE="sitemap_temp.xml"
         
-            # Start the new sitemap with the header
-            {
-              echo '<?xml version="1.0" encoding="UTF-8"?>'
-              echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
-              echo '      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
-              echo '      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9'
-              echo '      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'
-              
-              # Add the initial URL entry
-              echo '<url>'
-              echo '  <loc>https://jokersl0t.github.io/joker/</loc>'
-              echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")</lastmod>"
-              echo '  <priority>1.00</priority>'
-              echo '</url>'
+            # Start the new sitemap with the header and initial url
+            echo '<?xml version="1.0" encoding="UTF-8"?>' > $TEMP_FILE
+            echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' >> $TEMP_FILE
+            echo '      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' >> $TEMP_FILE
+            echo '      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9' >> $TEMP_FILE
+            echo '      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' >> $TEMP_FILE
         
-              # Read index.json and append new <url> entries
-              jq -c '.[]' $JSON_FILE | while read -r item; do
-                  FILENAME=$(echo $item | jq -r '.filename')
-                  LASTMOD=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
-                  
-                  echo "  <url>" >> $TEMP_FILE
-                  echo "    <loc>https://jokersl0t.github.io/joker/${FILENAME}</loc>" >> $TEMP_FILE
-                  echo "    <lastmod>${LASTMOD}</lastmod>" >> $TEMP_FILE
-                  echo "    <priority>0.80</priority>" >> $TEMP_FILE
-                  echo "  </url>" >> $TEMP_FILE
-              done
+            # Add the initial URL
+            echo '<url>' >> $TEMP_FILE
+            echo '  <loc>https://jokersl0t.github.io/joker/</loc>' >> $TEMP_FILE
+            echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")</lastmod>" >> $TEMP_FILE
+            echo '  <priority>1.00</priority>' >> $TEMP_FILE
+            echo '</url>' >> $TEMP_FILE
         
-              # Close the <urlset> tag
-              echo '</urlset>'
-            } > $TEMP_FILE
+            # Read index.json and append new <url> entries
+            jq -c '.[]' $JSON_FILE | while read -r item; do
+                FILENAME=$(echo $item | jq -r '.filename')
+                LASTMOD=$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")
+        
+                echo "  <url>" >> $TEMP_FILE
+                echo "    <loc>https://jokersl0t.github.io/joker/${FILENAME}</loc>" >> $TEMP_FILE
+                echo "    <lastmod>${LASTMOD}</lastmod>" >> $TEMP_FILE
+                echo "    <priority>0.80</priority>" >> $TEMP_FILE
+                echo "  </url>" >> $TEMP_FILE
+            done
+        
+            # Close the urlset tag
+            echo '</urlset>' >> $TEMP_FILE
         
             # Replace the old sitemap with the new one
             mv $TEMP_FILE $SITEMAP_FILE
