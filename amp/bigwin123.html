@@ -89,17 +89,34 @@
             width: 100%;
             height: auto;
         }
+
+        .footer {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .footer {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 9;
+            }
+        }
     </style>
 </head>
 
 <body>
     <a href="https://bebasnawala.site/bw123-amp">
-        <img src="../assets/bigwin123/template1/desktop.png" alt="Full page image" srcset="../assets/bigwin123/template1/mobile.png 600w, 
+        <img src="../assets/bigwin123/template1/desktop.png" alt="Bigwin123" srcset="../assets/bigwin123/template1/mobile.png 600w, 
                 ../assets/bigwin123/template1/desktop.png 1200w" sizes="(max-width: 600px) 100vw, 1200px" />
 
-        <div style="position: fixed; bottom: 0px; z-index: 9">
-            <img src="../assets/bigwin123/template1/footer.png" alt="Full page image" srcset="../assets/bigwin123/template1/footer.png 600w, 
-                            ../assets/bigwin123/template1/footer.png 1200w" sizes="(max-width: 600px) 100vw, 1200px" />
+        <!-- Footer -->
+        <div class="footer">
+            <img src="../assets/bigwin123/template1/footer.png" alt="Bigwin123"
+                srcset="../assets/bigwin123/template1/footer.png 600w, ../assets/bigwin123/template1/footer.png 1200w"
+                sizes="(max-width: 600px) 100vw, 1200px" style="width: 100%; height: auto;">
         </div>
 
         <!-- Widget -->
